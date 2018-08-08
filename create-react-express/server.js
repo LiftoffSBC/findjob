@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const request = require("request");
 
+var router = express.router()
 app.get("/api/search/:title", (req, res) => {
   
   const options = {
@@ -29,14 +30,27 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*"), function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+};
 
-app.listen(PORT, function() {
+server.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
+res.sendFile(path.join(__dirname, "/public/upload.html")
+);
+app.post('/upload', function(req, res) {
+ console.log(req.files);
+})
+var routes = require("/upload")
+app.use("/", routes);
+app.use("/update", routes);
+app.use("/create", routes);
 
-
+// router.get('/'), function(req, res){
+//   re.send('/')
+// };
+app.listen();
+module.exports = app;
 
 
