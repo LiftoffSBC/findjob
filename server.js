@@ -3,11 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const request = require("request");
-<<<<<<< HEAD:create-react-express/server.js
-=======
 
->>>>>>> 50431cb099a1d23a463e52d053f9c6e705e75110:server.js
-//correct server file
 
 app.get("/api/search/:title", (req, res) => {
   
