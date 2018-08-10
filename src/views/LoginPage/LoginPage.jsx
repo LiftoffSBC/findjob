@@ -98,6 +98,7 @@ class LoginPage extends React.Component {
                     </CardHeader>
                     <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
+                      
                       <CustomInput
                         labelText="First Name..."
                         id="first"
