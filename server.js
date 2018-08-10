@@ -3,7 +3,10 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const request = require("request");
+<<<<<<< HEAD:create-react-express/server.js
+=======
 
+>>>>>>> 50431cb099a1d23a463e52d053f9c6e705e75110:server.js
 //correct server file
 
 app.get("/api/search/:title", (req, res) => {
@@ -35,23 +38,33 @@ app.get("*"), function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 };
 
-server.listen(PORT, function() {
+app.get("/api/searchGit/:title", (req, res) => {
+  
+  const options = {
+    url: `https://jobs.github.com/positions.json?description=${req.params.title}&page=1`
+    }
+  request(options, (err, response, body) => {
+    if (!err && response.statusCode === 200) {
+      res.json(body);
+      console.log(body);
+    } else {
+      res.json({ error: err.message });
+    }
+  });
+});
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*"), function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+};
+
+
+app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
-res.sendFile(path.join(__dirname, "/public/upload.html")
-);
-app.post('/upload', function(req, res) {
- console.log(req.files);
-})
-var routes = require("/upload")
-app.use("/", routes);
-app.use("/update", routes);
-app.use("/create", routes);
-
-// router.get('/'), function(req, res){
-//   re.send('/')
-// };
-app.listen();
-module.exports = app;
-
-
