@@ -23,6 +23,8 @@ app.get("/api/search/:title", (req, res) => {
   });
 });
 
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
