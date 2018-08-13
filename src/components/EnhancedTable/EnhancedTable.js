@@ -18,6 +18,29 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
+import careerAPI from '/api/search/:title';
+import githubAPI from '/apiGit/search/:title';
+
+class Career extends Component{
+  state = {
+    career: []
+};
+
+componentDidMount() {
+  this.loadCareer();
+}
+
+loadCareer = () => {
+  API.getCareer()
+  .then(res =>
+   this.setState({ career: res.data })
+   
+  )
+  .catch(err => console.log(err));
+};
+
+}
+console.log(res.data);
 
 let counter = 0;
 function createData(name, calories, fat, carbs, protein) {
@@ -45,24 +68,6 @@ class EnhancedTableHead extends React.Component {
 
   render() {
     const { onSelectAllClick, order, orderBy, numSelected, rowCount } = this.props;
-    //ajax code
-    $.ajax({
-      dataType: "json",
-      method: "POST",
-      url: "/api/search/:title",
-      data: body
-    })
-      
-      //clear then append
-      .done(function (result) {
-          event.preventDefault();
-           $('#results').empty();
-          //  $('#theModal').modal('toggle');
-           $("#body").append(result);
-          console.log(result);
-      });
-    
-      console.log(result.length);
     
     
     return (
