@@ -4,7 +4,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const request = require("request");
 
+<<<<<<< HEAD
 //correct server file
+=======
+>>>>>>> 814b25e5d842e5393a8cec04531240a0e596b9b8
 
 app.get("/api/search/:title", (req, res) => {
   
