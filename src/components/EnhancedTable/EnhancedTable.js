@@ -41,6 +41,8 @@ loadCareer = () => {
 }
 console.log(res.data);
 
+
+
 let counter = 0;
 function createData(name, calories, fat, carbs, protein) {
   counter += 1;
