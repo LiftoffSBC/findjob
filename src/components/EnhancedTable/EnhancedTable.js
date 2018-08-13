@@ -18,9 +18,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
-import careerAPI from '/api/search/:title';
-import githubAPI from '/apiGit/search/:title';
-
+import API from "//utils/API";
+console.log("here");
 class Career extends Component{
   state = {
     career: []
@@ -31,7 +30,7 @@ componentDidMount() {
 }
 
 loadCareer = () => {
-  API.getCareer()
+  API.careerAPI()
   .then(res =>
    this.setState({ career: res.data })
    
