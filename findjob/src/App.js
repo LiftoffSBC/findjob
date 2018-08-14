@@ -16,10 +16,31 @@ import Nav from '../node_modules/react-bootstrap/lib/Nav';
 import NavItem from '../node_modules/react-bootstrap/lib/NavItem';
 import NavDropdown from '../node_modules/react-bootstrap/lib/NavDropdown';
 import MenuItem from '../node_modules/react-bootstrap/lib/MenuItem';
+import API from "../src/utils/API";
 
 class App extends Component {
-  render() {
-    return (
+  state = {
+    jobs: [],
+    JobTitle: "JobTitle",
+    Company: "Company",
+    URL: "Job Description",
+    AcquisitionDate: "Date",
+  };
+
+componentDidMount() {
+  // this.loadCareer();
+}
+
+loadCareer = () => {
+  API.getCareer()
+    .then(res => {
+      this.setState({ jobs: res, JobTitle: "", Company: "", URL: "" , AcquisitionDate: ""})
+      console.log(res);}
+      )
+      .catch (err => console.log(err));
+};
+render() {
+  return (
       
       <div className="App">
       <Navbar inverse collapseOnSelect>
@@ -63,7 +84,7 @@ class App extends Component {
               <ControlLabel>Name</ControlLabel>{' '}
               <FormControl type="text" placeholder="Front-end Developer" />
             </FormGroup>{' '}
-            <Button type="submit">Search</Button>
+            <Button type="submit" onClick={this.loadCareer}>Search</Button>
           </Form>
           <br/>
           <Row className="show-grid">
@@ -96,9 +117,11 @@ class App extends Component {
           </Row>
 
         </Grid>
+        
       </div>
     );
-  }
-}
 
-export default App;
+  }
+
+}
+  export default App;

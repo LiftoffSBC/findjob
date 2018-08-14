@@ -13,8 +13,8 @@ app.get("/api/search/:title", (req, res) => {
   }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
-      res.json(body);
-      console.log(body);
+      res.json(JSON.parse(body));
+      console.log(JSON.parse(body));
     } else {
       res.json({ error: err.message });
     }
@@ -36,8 +36,8 @@ app.get("/api/searchGit/:title", (req, res) => {
     }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
-      res.json(body);
-      console.log(body);
+      res.json(JSON.parse(body));
+      console.log(JSON.parse(body));
     } else {
       res.json({ error: err.message });
     }
