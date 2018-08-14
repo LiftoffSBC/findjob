@@ -1,8 +1,5 @@
 import React from "react";
 import "./Jumbotron.css";
-// import React from 'react';
-// import { render } from 'react-dom';
-// import {Image} from 'react-bootstrap';
 
 const Jumbotron = () => (
   <div className="jumbotron">
