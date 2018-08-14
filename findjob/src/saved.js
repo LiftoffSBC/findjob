@@ -38,21 +38,14 @@ class App extends Component {
         Link
       </NavItem>
       <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Saved jobs</MenuItem>
+        <MenuItem eventKey={3.1}>Action</MenuItem>
         <MenuItem eventKey={3.2}>Another action</MenuItem>
         <MenuItem eventKey={3.3}>Something else here</MenuItem>
         <MenuItem divider />
         <MenuItem eventKey={3.3}>Separated link</MenuItem>
       </NavDropdown>
     </Nav>
-    <Nav pullRight>
-      <NavItem eventKey={1} href="#">
-        Login
-      </NavItem>
-      <NavItem eventKey={2} href="#">
-        Sign Up
-      </NavItem>
-    </Nav>
+  
   </Navbar.Collapse>
 </Navbar>
 
@@ -70,20 +63,10 @@ class App extends Component {
             <Col md={12}>
               <Table striped bordered condensed hover>
                 <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Job</th>
-                    <th>Location</th>
-                    <th>Pay</th>
-                  </tr>
+                
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Full-Stack Developer</td>
-                    <td>Charlotte, NC</td>
-                    <td>$85k</td>
-                  </tr>
+                 
                 </tbody>
               </Table>
             </Col>
