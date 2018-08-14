@@ -1,8 +1,13 @@
 import React from "react";
+import "./Jumbotron.css";
+// import React from 'react';
+// import { render } from 'react-dom';
+// import {Image} from 'react-bootstrap';
 
 const Jumbotron = () => (
   <div className="jumbotron">
-    <h1>Your Project</h1>
+    <h1><img src={require('../../public/img/finjobiotransparent.png')} className="img-fluid" alt="Responsive image"/></h1>
+    
     <p>
       Enim adipisicing enim reprehenderit ex ullamco consectetur Lorem laboris
       magna exercitation. Aliquip reprehenderit magna elit cillum adipisicing
@@ -15,3 +20,6 @@ const Jumbotron = () => (
 );
 
 export default Jumbotron;
+
+
+
