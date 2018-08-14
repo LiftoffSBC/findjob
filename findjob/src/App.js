@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// React Bootstrap components
+// React Bootstrap components//
 import Grid from '../node_modules/react-bootstrap/lib/Grid';
 import Row from '../node_modules/react-bootstrap/lib/Row';
 import Col from '../node_modules/react-bootstrap/lib/Col';
