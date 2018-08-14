@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #535353;
+    color: black;
+    position: sticky;
+    padding: 5px;
+}
+
+input {
+    float: right;
+    margin-right: 5px;
+    margin-top: 7px;
+}
+
+button {
+    float: right;
+    width: 150px;
+    margin-top: 7px;
+}
+
+.navbar-brand {
+    float: left;
+}

@@ -34,3 +34,26 @@ Navbar {
 Jumbotron {
   background-image: url ("/../findjob/findjob/public/img/thumbnail.jpg")
 }
+
+.container {
+  width: auto;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: fit-content;
+}
+
+@media (min-width: 992px) {
+    .container {
+      width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+.container {
+    width: auto;
+    }
+}
