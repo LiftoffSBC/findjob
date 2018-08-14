@@ -3,6 +3,23 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const request = require("request");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
+
+// Use body parser with our app
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+
+
+
+
+
+
+
 app.get("/api/search/:title", (req, res) => {
   
   const options = {
@@ -20,10 +37,35 @@ app.get("/api/search/:title", (req, res) => {
     }
   });
 });
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+// Database configuration with mongoose
+var databaseUri = "mongodb://localhost/jobdb";
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
 }
+
+var db = mongoose.connection;
+
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection sucessful.");
+});
+
+//if set up routes:
+// // Import routes and give the server access to them.
+// var router = express.Router();
+
+// // Require routes file pass router object
+// require("./config/routes")(router);
+
+// // Have every request go through router middlewar
+// app.use(router);
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*"), function(req, res) {

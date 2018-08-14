@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// React Bootstrap components
+// React Bootstrap components//
 import Grid from '../node_modules/react-bootstrap/lib/Grid';
 import Row from '../node_modules/react-bootstrap/lib/Row';
 import Col from '../node_modules/react-bootstrap/lib/Col';
@@ -16,48 +16,60 @@ import Nav from '../node_modules/react-bootstrap/lib/Nav';
 import NavItem from '../node_modules/react-bootstrap/lib/NavItem';
 import NavDropdown from '../node_modules/react-bootstrap/lib/NavDropdown';
 import MenuItem from '../node_modules/react-bootstrap/lib/MenuItem';
+import Jumbotron from '../node_modules/react-bootstrap/lib/MenuItem';
+import Image from '../node_modules/react-bootstrap/lib/MenuItem';
+
 
 class App extends Component {
   render() {
     return (
-      
+
       <div className="App">
-      <Navbar inverse collapseOnSelect>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <a href="#brand">FindJob.io</a>
-    </Navbar.Brand>
-    <Navbar.Toggle />
-  </Navbar.Header>
-  <Navbar.Collapse>
-    <Nav>
-      <NavItem eventKey={1} href="#">
-        Link
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#brand">FindJob.io</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} href="#">
+                Link
       </NavItem>
-      <NavItem eventKey={2} href="#">
-        Link
+              <NavItem eventKey={2} href="#">
+                Link
       </NavItem>
-      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Saved jobs</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.3}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
-    <Nav pullRight>
-      <NavItem eventKey={1} href="#">
-        Login
+              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                <MenuItem eventKey={3.1}>Action</MenuItem>
+                <MenuItem eventKey={3.2}>Another action</MenuItem>
+                <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey={3.3}>Separated link</MenuItem>
+              </NavDropdown>
+            </Nav>
+            <Nav pullRight>
+              <NavItem eventKey={1} href="#">
+                Login
       </NavItem>
-      <NavItem eventKey={2} href="#">
-        Sign Up
+              <NavItem eventKey={2} href="#">
+                Sign Up
       </NavItem>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Jumbotron>
+          <h1>Hello, world!</h1>
+          <p>
+          <Image src="/thumbnail.jpg" responsive />;
+  </p>
+          <p>
+            <Button bsStyle="primary">Learn more</Button>
+          </p>
+        </Jumbotron>
 
         <Grid>
-        
+
           <Form horizontal>
             <FormGroup controlId="formHorizontalName">
               <ControlLabel>Name</ControlLabel>{' '}
@@ -65,7 +77,7 @@ class App extends Component {
             </FormGroup>{' '}
             <Button type="submit">Search</Button>
           </Form>
-          <br/>
+          <br />
           <Row className="show-grid">
             <Col md={12}>
               <Table striped bordered condensed hover>
