@@ -8,8 +8,7 @@ var JobSchema = new Schema({
   // title is a required string
   jobtitle: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
 
   companyname: {
@@ -22,6 +21,10 @@ var JobSchema = new Schema({
     required: true
   },
   date: String,
+  jobID: {
+    type: String,
+    unique: true
+  },
   saved: {
     type: Boolean,
     default: false
