@@ -38,23 +38,23 @@ app.get("/api/search/:title", (req, res) => {
   });
 });
 // Database configuration with mongoose
-var databaseUri = "mongodb://localhost/jobdb";
+// var databaseUri = "mongodb://localhost/jobdb";
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(databaseUri);
-}
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect(databaseUri);
+// }
 
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+// db.on("error", function(error) {
+//   console.log("Mongoose Error: ", error);
+// });
 
-db.once("open", function() {
-  console.log("Mongoose connection sucessful.");
-});
+// db.once("open", function() {
+//   console.log("Mongoose connection sucessful.");
+// });
 
 //if set up routes:
 // // Import routes and give the server access to them.
