@@ -1,0 +1,13 @@
+.jumbotron {
+    background-image:  url("../../img/thumbnail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+}
+
+.img-fluid {
+    max-width: 100%;
+    float: left;
+    height: auto;
+
+}
