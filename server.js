@@ -72,6 +72,7 @@ app.get("/api/searchGit/:title", (req, res) => {
       res.json(body);
       //***add db connection into here ***//
       console.log(body);
+      const db = require("../models");
       module.exports = {
         findAll: function (req, res) {
           db.Job
