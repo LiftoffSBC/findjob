@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Table from "./components/Table/Table";
+import Footer from "./components/Footer/Footer";
+
 
 const App = () => (
   <div>
@@ -10,6 +12,7 @@ const App = () => (
     <Jumbotron />
     <Table />
   </div>
+  <Footer />
   </div>
 );
 
