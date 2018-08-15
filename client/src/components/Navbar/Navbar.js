@@ -13,8 +13,8 @@ class Navbar extends React.Component {
     AcquisitionDate: "Date",
   };
 
-  loadCareer = () => {
-    API.getCareer()
+  loadCareer = (title) => {
+    API.getCareer(title)
       .then(res => {
         this.setState({ jobs: res, JobTitle: "", Company: "", URL: "", AcquisitionDate: "" })
         console.log(res);
