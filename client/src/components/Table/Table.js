@@ -2,11 +2,10 @@ import React from "react";
 import "./Table.css";
 import "../Navbar/Navbar";
 
-class Table extends React.Component {
 
-render() {
-    return (
-
+const Table = (props) => {
+  console.log(props);
+  return (
     <div className="table">
       <h1>Results</h1>
       <thead id="thead">
@@ -18,16 +17,20 @@ render() {
         </tr>
       </thead>
       <tbody id="tbody">
-        <tr>
-          <td>1</td>
-          <td>Full-Stack Developer</td>
-          <td>Charlotte, NC</td>
-          <td>$85k</td>
-        </tr>
+        {props.searchResults.map((result, i) => {
+          console.log(result);
+          return (
+            <tr>
+              <td>{i+1}</td>
+              <td>{result.JobTitle}</td>
+              <td>Charlotte, NC</td>
+              <td>$85k</td>
+            </tr>
+          )
+        })}
       </tbody>
     </div>
-  )}
+  )
+};
 
-}
-  
-  export default Table;
+export default Table;

@@ -5,6 +5,11 @@ import API from "./../../utils/API";
 
 class Navbar extends React.Component {
 
+//below from Austin - Lib needed array for db
+//   state={
+//     search: ""
+//   }
+
   state = {
     jobs: [],
     JobTitle: "JobTitle",
@@ -14,13 +19,12 @@ class Navbar extends React.Component {
     search: ''
   };
 
+
   loadCareer = (title) => {
     API.getCareer(title)
       .then(res => {
-        this.setState({ jobs: res, JobTitle: "", Company: "", URL: "", AcquisitionDate: "" })
-        console.log(res);
-      }
-      )
+        this.props.updateSearchResults(res.data.Jobs);
+      })
       .catch(err => console.log(err));
   };
 
@@ -35,39 +39,40 @@ class Navbar extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.loadCareer(this.state.search);
-    console.log(this.state.search); 
+    console.log(this.state.search);
   };
 
   render() {
-       return (
+    return (
 
-  <nav className="navbar fixed-top navbar-light bg-light">
+      <nav className="navbar fixed-top navbar-light bg-light">
 
-  <a className="navbar-brand"><img src={require('../../img/finjobiotransparent.png')} alt="Findjob.io" /></a>
+        <a className="navbar-brand"><img src={require('../../img/finjobiotransparent.png')} alt="Findjob.io" /></a>
 
-  <form className="form-inline">
+        <form className="form-inline">
 
-    <button 
-    className="btn btn-primary my-2 my-md-0" 
-    type="submit" 
-    onClick={this.handleFormSubmit}
-    >Search</button>
+          <button
+            className="btn btn-primary my-2 my-md-0"
+            type="submit"
+            onClick={this.handleFormSubmit}
+          >Search</button>
 
-    <input 
-    className="form-control mr-lg-2" 
-    type="search" 
-    aria-label="Search" 
-    controlId="formHorizontalName" 
-    onChange={this.handleInputChange}
-    value={this.state.search}
-    name="search"
-    placeholder="Search For a Job"
-    id="search"/>
+          <input
+            className="form-control mr-lg-2"
+            type="search"
+            aria-label="Search"
+            controlId="formHorizontalName"
+            onChange={this.handleInputChange}
+            value={this.state.search}
+            name="search"
+            placeholder="Search For a Job"
+            id="search" />
 
-  </form>
+        </form>
 
-</nav>
-       )}
+      </nav>
+    )
+  }
 }
 
 export default Navbar;

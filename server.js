@@ -26,6 +26,7 @@ app.get("/api/search/:title", (req, res) => {
   }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
+
       res.json(body);
       const jobArray = JSON.parse(body).Jobs;
 
@@ -35,6 +36,7 @@ app.get("/api/search/:title", (req, res) => {
       });
       
       // console.log(JSON.parse(body));
+
     } else {
       res.json({ error: err.message });
     }
