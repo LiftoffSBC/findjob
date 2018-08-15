@@ -7,6 +7,6 @@ export default {
 }
 //   // Gets Github Career jobs
 //   loadGitCareer: function () {
-//     return axios.get("/api/searchGit/:title");
+//     return axios.get("/api/searchGit/" + title);
 //   }
 // }

@@ -34,6 +34,7 @@ class Navbar extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.loadCareer(this.state.search);
+    console.log(this.state.search); 
   };
 
   render() {
