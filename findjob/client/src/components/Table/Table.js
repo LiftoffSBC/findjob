@@ -3,6 +3,7 @@ import "./Table.css";
 
 const Table = () => (
     <div className="table">
+                <h1>Results</h1>
                 <thead id="thead">
                   <tr>
                     <th>#</th>
