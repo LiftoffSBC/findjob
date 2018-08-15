@@ -5,9 +5,20 @@ import API from "./../../utils/API";
 
 class Navbar extends React.Component {
 
-  state={
-    search: ""
-  }
+//below from Austin - Lib needed array for db
+//   state={
+//     search: ""
+//   }
+
+  state = {
+    jobs: [],
+    JobTitle: "JobTitle",
+    Company: "Company",
+    URL: "Job Description",
+    AcquisitionDate: "Date",
+    search: ''
+  };
+
 
   loadCareer = (title) => {
     API.getCareer(title)
@@ -19,9 +30,9 @@ class Navbar extends React.Component {
 
   handleInputChange = event => {
     const value = event.target.value;
-    const name = event.target.name;
+    
     this.setState({
-      [name]: value
+      search: value
     });
   };
 

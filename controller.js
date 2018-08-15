@@ -13,17 +13,18 @@ const db = require("./models");
             .then(dbJob => res.json(dbJob))
             .catch(err => res.status(422).json(err));
         },
-        create: function (jobtitle, companyname, description, date) {
+        create: function (jobtitle, companyname, description, date, jobID) {
            const job = {
             jobtitle: jobtitle,
             companyname: companyname,
             description: description,
-            date: date
+            date: date,
+            jobID: jobID
           };
-          db.Job
+          db.Jobs
             .create(job)
-            .then(dbjob => res.json(dbjob))
-            .catch(err => res.status(422).json(err));
+            .then(dbjob => console.log(dbjob))
+            .catch(err => console.log(err));
         },
         update: function (req, res) {
           db.Job

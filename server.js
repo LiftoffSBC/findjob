@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/api/search/:title", (req, res) => {
+  console.log(req.params.title)
 
   const options = {
     url: `https://api.careeronestop.org/v1/jobsearch/q2Tg69QZctxkreR/${req.params.title}/charlotte%2C%20nc/25/0/0/0/100/60`,
@@ -25,14 +26,24 @@ app.get("/api/search/:title", (req, res) => {
   }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
-      res.json(JSON.parse(body));
-//controller.create(job);
-      console.log(body);
+
+      res.json(body);
+      const jobArray = JSON.parse(body).Jobs;
+
+      jobArray.forEach(job => {
+        //JvId
+        controller.create(job.JobTitle, job.Company, job.URL, job.AccquisitionDate, job.JvId);
+      });
+      
+      // console.log(JSON.parse(body));
+
     } else {
       res.json({ error: err.message });
     }
   });
 });
+
+
 // Database configuration with mongoose
 var databaseUri = "mongodb://localhost/jobdb";
 
