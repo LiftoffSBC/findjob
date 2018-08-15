@@ -1,9 +1,10 @@
 .navbar {
-    background-color: #f8f8f8;
+    background-color: #fffb16;
     color: black;
     position: sticky;
     padding: 5px;
-    border-color: #e7e7e7e7;
+    border-color: #b8b511;
+    border-radius: 0px;
 }
 .form-inline {
     margin-right: 26%;
@@ -19,7 +20,7 @@ button {
     float: right;
     width: 150px;
     margin-top: 7px;
-    background-color: #979797;
+    background-color: #000000;
     color: white;
 }
 
