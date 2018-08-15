@@ -11,8 +11,13 @@ var JobSchema = new Schema({
     required: true,
     unique: true
   },
+
+  companyname: {
+    type: String,
+    required: true
+  },
   // link is a required string
-  url: {
+  description: {
     type: String,
     required: true
   },
