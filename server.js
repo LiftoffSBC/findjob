@@ -5,6 +5,8 @@ const app = express();
 const request = require("request");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var controller = require("./controller");
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -24,6 +26,7 @@ app.get("/api/search/:title", (req, res) => {
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
       res.json(body);
+      controller.create(job);
       console.log(body);
     } else {
       res.json({ error: err.message });
@@ -67,52 +70,12 @@ app.get("/api/searchGit/:title", (req, res) => {
   const options = {
     url: `https://jobs.github.com/positions.json?description=${req.params.title}&page=1`
   }
-  request(options, (err, response, body) => {
+  request(options, (err, response, data) => {
     if (!err && response.statusCode === 200) {
-      res.json(body);
+      res.json(data);
       //***add db connection into here ***//
-      console.log(body);
-      const db = require("../models");
-      module.exports = {
-        findAll: function (req, res) {
-          db.Job
-            .find(req.query)
-            .sort({ date: -1 })
-            .then(dbJob => res.json(dbJob))
-            .catch(err => res.status(422).json(err));
-        },
-        findById: function (req, res) {
-          db.Job
-            .findById(req.params.id)
-            .then(dbJob => res.json(dbJob))
-            .catch(err => res.status(422).json(err));
-        },
-        create: function (req, res) {
-          const job = {
-            jobtitle: req.body.JobTitle,
-            companyname: req.body.Company,
-            description: req.body.URL,
-            date: req.body.AccquisitionDate
-          };
-          db.Job
-            .create(job)
-            .then(dbjob => res.json(dbjob))
-            .catch(err => res.status(422).json(err));
-        },
-        update: function (req, res) {
-          db.Job
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
-            .then(dbjob => res.json(dbjob))
-            .catch(err => res.status(422).json(err));
-        },
-        remove: function (req, res) {
-          db.Job
-            .findById({ _id: req.params.id })
-            .then(dbjob => dbjob.remove())
-            .then(dbjob => res.json(dbjob))
-            .catch(err => res.status(422).json(err));
-        }
-      };
+      console.log(data);
+      
     } else {
       res.json({ error: err.message });
     }

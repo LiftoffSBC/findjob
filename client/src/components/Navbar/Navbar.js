@@ -13,8 +13,6 @@ class Navbar extends React.Component {
     AcquisitionDate: "Date",
   };
 
-
-
   loadCareer = (title) => {
     API.getCareer(title)
       .then(res => {
