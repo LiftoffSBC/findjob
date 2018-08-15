@@ -1,7 +1,7 @@
 import React from "react";
 import "./Table.css";
 import "../Navbar/Navbar";
-
+// import "../../App";
 
 const Table = (props) => {
   console.log(props);

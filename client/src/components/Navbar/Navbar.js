@@ -12,6 +12,7 @@ class Navbar extends React.Component {
 
   state = {
     jobs: [],
+    searchResults: [],
     JobTitle: "JobTitle",
     Company: "Company",
     URL: "Job Description",
