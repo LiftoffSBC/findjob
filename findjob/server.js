@@ -13,15 +13,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-
-
-
-
-
-
-
 app.get("/api/search/:title", (req, res) => {
-  
+
   const options = {
     url: `https://api.careeronestop.org/v1/jobsearch/q2Tg69QZctxkreR/${req.params.title}/charlotte%2C%20nc/25/0/0/0/100/60`,
     headers: {
@@ -48,11 +41,11 @@ if (process.env.MONGODB_URI) {
 
 var db = mongoose.connection;
 
-db.on("error", function(error) {
+db.on("error", function (error) {
   console.log("Mongoose Error: ", error);
 });
 
-db.once("open", function() {
+db.once("open", function () {
   console.log("Mongoose connection sucessful.");
 });
 
@@ -68,18 +61,57 @@ db.once("open", function() {
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*"), function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-};
+
 app.get("/api/searchGit/:title", (req, res) => {
-  
+
   const options = {
     url: `https://jobs.github.com/positions.json?description=${req.params.title}&page=1`
-    }
+  }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
       res.json(body);
+      //***add db connection into here ***//
       console.log(body);
+      module.exports = {
+        findAll: function (req, res) {
+          db.Job
+            .find(req.query)
+            .sort({ date: -1 })
+            .then(dbJob => res.json(dbJob))
+            .catch(err => res.status(422).json(err));
+        },
+        findById: function (req, res) {
+          db.Job
+            .findById(req.params.id)
+            .then(dbJob => res.json(dbJob))
+            .catch(err => res.status(422).json(err));
+        },
+        create: function (req, res) {
+          const job = {
+            jobtitle: req.body.JobTitle,
+            companyname: req.body.Company,
+            description: req.body.URL,
+            date: req.body.AccquisitionDate
+          };
+          db.Job
+            .create(job)
+            .then(dbjob => res.json(dbjob))
+            .catch(err => res.status(422).json(err));
+        },
+        update: function (req, res) {
+          db.Job
+            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .then(dbjob => res.json(dbjob))
+            .catch(err => res.status(422).json(err));
+        },
+        remove: function (req, res) {
+          db.Job
+            .findById({ _id: req.params.id })
+            .then(dbjob => dbjob.remove())
+            .then(dbjob => res.json(dbjob))
+            .catch(err => res.status(422).json(err));
+        }
+      };
     } else {
       res.json({ error: err.message });
     }
@@ -91,9 +123,9 @@ if (process.env.NODE_ENV === "production") {
 }
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*"), function(req, res) {
+app.get("*"), function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 };
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
