@@ -1,22 +1,32 @@
 .navbar {
-    background-color: #535353;
+    background-color: #f8f8f8;
     color: black;
     position: sticky;
     padding: 5px;
+    border-color: #e7e7e7e7;
 }
-
+.form-inline {
+    margin-right: 26%;
+}
 input {
     float: right;
     margin-right: 5px;
     margin-top: 7px;
+    min-width: 500px;
 }
 
 button {
     float: right;
     width: 150px;
     margin-top: 7px;
+    background-color: #979797;
+    color: white;
 }
 
 .navbar-brand {
     float: left;
+}
+
+img {
+    height: 35px;
 }
