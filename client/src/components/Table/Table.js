@@ -1,7 +1,12 @@
 import React from "react";
 import "./Table.css";
+import "../Navbar/Navbar";
 
-  const Table = () => (
+class Table extends React.Component {
+
+render() {
+    return (
+
     <div className="table">
       <h1>Results</h1>
       <thead id="thead">
@@ -21,6 +26,8 @@ import "./Table.css";
         </tr>
       </tbody>
     </div>
-  );
+  )}
+
+}
   
   export default Table;
