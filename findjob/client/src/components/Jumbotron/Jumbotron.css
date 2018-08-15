@@ -1,8 +1,10 @@
 .jumbotron {
-    background-image:  url("../../img/thumbnail.jpg");
+    background-image:  url("../../img/markus-spiske-148030-unsplash.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     width: auto;
+    background-blend-mode: hard-light;
+    background-color: #00000038;
 }
 
 .img-fluid {
@@ -10,4 +12,12 @@
     float: left;
     height: auto;
 
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: 900;
+    color: black;
+    font-variant-caps: all-small-caps;
 }
