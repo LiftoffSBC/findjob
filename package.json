@@ -4,12 +4,11 @@
     "server": "node server.js",
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "babel src -d lib",
+    "build": "buildbabel src -d lib",
     "test": "jest"
   },
   "name": "findjob",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",
     "concurrently": "^3.6.0",

@@ -2,9 +2,12 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
+
     <nav className="navbar fixed-bottom navbar-light bg-light footerBottom">
         <div className="footerDiv">
         
+
+
 
 <a className="nav-link github" href="" target="_blank"><li>About Us</li></a>            <a className="nav-link github" href="https://github.com/LiftoffSBC/findjob" target="_blank">Github</a>
             <br />

@@ -11,10 +11,11 @@ class Navbar extends React.Component {
     Company: "Company",
     URL: "Job Description",
     AcquisitionDate: "Date",
+    search: ''
   };
 
-  loadCareer = () => {
-    API.getCareer()
+  loadCareer = (title) => {
+    API.getCareer(title)
       .then(res => {
         this.setState({ jobs: res, JobTitle: "", Company: "", URL: "", AcquisitionDate: "" })
         console.log(res);
@@ -25,15 +26,16 @@ class Navbar extends React.Component {
 
   handleInputChange = event => {
     const value = event.target.value;
-    const name = event.target.name;
+    
     this.setState({
-      [name]: value
+      search: value
     });
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
     this.loadCareer(this.state.search);
+    console.log(this.state.search); 
   };
 
   render() {
