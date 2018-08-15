@@ -25,8 +25,8 @@ app.get("/api/search/:title", (req, res) => {
   }
   request(options, (err, response, body) => {
     if (!err && response.statusCode === 200) {
-      res.json(body);
-      controller.create(job);
+      res.json(JSON.parse(body));
+//controller.create(job);
       console.log(body);
     } else {
       res.json({ error: err.message });
