@@ -27,10 +27,6 @@
   to { transform: rotate(360deg); }
 }
 
-Navbar {
-  color: red;
-}
-
 Jumbotron {
   background-image: url ("/../findjob/findjob/public/img/thumbnail.jpg")
 }

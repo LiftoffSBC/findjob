@@ -3,8 +3,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     width: auto;
+    height: 350px;
     background-blend-mode: hard-light;
     background-color: #00000038;
+    margin-top: -20px;
 }
 
 .img-fluid {
