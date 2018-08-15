@@ -46,7 +46,7 @@ class Navbar extends React.Component {
   render() {
     return (
 
-      <nav className="navbar fixed-top navbar-light bg-light">
+      <nav className="navbar fixed-top navbar-light bg-light navbarTop">
 
         <a className="navbar-brand"><img src={require('../../img/finjobiotransparent.png')} alt="Findjob.io" /></a>
 

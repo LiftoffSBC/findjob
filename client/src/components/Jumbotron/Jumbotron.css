@@ -6,7 +6,7 @@
     height: 350px;
     background-blend-mode: hard-light;
     background-color: #00000038;
-    margin-top: -20px;
+    margin-top: 8%;
 }
 
 .img-fluid {
@@ -22,4 +22,5 @@
     font-weight: 900;
     color: black;
     font-variant-caps: all-small-caps;
+    font-style: italic;
 }

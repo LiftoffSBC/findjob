@@ -1,10 +1,13 @@
-.navbar {
+.navbarTop {
     background-color: #fffb16;
     color: black;
     position: sticky;
     padding: 5px;
     border-color: #b8b511;
     border-radius: 0px;
+    position:fixed;
+    top: 0;
+    min-width: 100%;
 }
 .form-inline {
     margin-right: 26%;

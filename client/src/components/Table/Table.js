@@ -10,21 +10,21 @@ const Table = (props) => {
       <h1>Results</h1>
       <thead id="thead">
         <tr>
-          <th>#</th>
-          <th>Job</th>
+          <th>Title</th>
           <th>Location</th>
-          <th>Pay</th>
+          <th>Company</th>
+          <th>Link</th>
         </tr>
       </thead>
       <tbody id="tbody">
-        {props.searchResults.map((result, i) => {
+        {props.searchResults.map((result) => {
           console.log(result);
           return (
             <tr>
-              <td>{i+1}</td>
               <td>{result.JobTitle}</td>
-              <td>Charlotte, NC</td>
-              <td>$85k</td>
+              <td>{result.Location}</td>
+              <td>{result.Company}</td>
+              <td><a href={result.URL} target="_blank">Apply Now</a></td>
             </tr>
           )
         })}
