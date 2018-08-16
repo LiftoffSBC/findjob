@@ -4,13 +4,13 @@ Findjob.io is like priceline.com for jobseekers . We pull in API’s from top jo
 
 ## How it works:
 
-2. We used create-react-app to 
+1. Users type in a search term for jobs they are interested in.
 
-3. The application keeps track of the user's score. The user's score is incremented when clicking an image for the first time. The user's score is reset to 0 if they click the same image more than once.
+2. Findjob.io pulls in data from several API's and eliminates duplicates to simplify the job search process.
 
-4. Every time an image is clicked, the images rendered to the page shuffle themselves in a random order.
+3. The application keeps track of jobs that users save (future development).
 
-5. Once the user's score is reset after an incorrect guess, the game restarts.
+4. Users can save a cover letter to a job (future development.)
 
 # Check out the app here:
 [Findjob.io](https://nameless-ocean-71188.herokuapp.com/)

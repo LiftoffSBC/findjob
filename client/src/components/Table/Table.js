@@ -6,8 +6,9 @@ import "../Navbar/Navbar";
 const Table = (props) => {
   console.log(props);
   return (
-    <div className="table">
-      <h1>Results</h1>
+    <div>
+    <h1>Results</h1>
+    <table className="table">
       <thead id="thead">
         <tr>
           <th>Title</th>
@@ -29,6 +30,7 @@ const Table = (props) => {
           )
         })}
       </tbody>
+    </table>
     </div>
   )
 };
