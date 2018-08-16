@@ -6,6 +6,7 @@ const request = require("request");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var controller = require("./controller");
+require('dotenv').config();
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -91,6 +92,10 @@ app.get("/api/searchGit/:title", (req, res) => {
   });
 });
 // Serve up static assets (usually on heroku)
+
+// do we use this to deploy? //
+// mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER} //
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }

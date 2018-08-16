@@ -62,7 +62,7 @@ class Navbar extends React.Component {
             className="form-control mr-lg-2"
             type="search"
             aria-label="Search"
-            controlId="formHorizontalName"
+            controlid="formHorizontalName"
             onChange={this.handleInputChange}
             value={this.state.search}
             name="search"
