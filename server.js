@@ -6,7 +6,7 @@ const request = require("request");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var controller = require("./controller");
-require('dotenv').config();
+// require('dotenv').config();
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
