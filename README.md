@@ -18,7 +18,7 @@ Findjob.io is like priceline.com for jobseekers . We pull in API’s from top jo
 # For more information check out our presentation:
 [Google Presentation](https://docs.google.com/presentation/d/1y3bOhJGm6MEJRMJuaAeyWJDNWRE9nxKlrEuitiA2jWw/edit?usp=sharing)
 
-![Screenshot](https://raw.githubusercontent.com/liftoffsbc/findjoc/master/client/src/img/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/liftoffsbc/findjob/master/client/src/img/screenshot.png)
 
 
 
