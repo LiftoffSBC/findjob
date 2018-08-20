@@ -1,14 +1,14 @@
 .footerBottom {
   width:100%;
   height:100px;
-  background-color: rgb(39, 39, 39);
+  background-color: #dee3eb;
   margin-top: 50px;
   margin-bottom: 0px;
-  border-color: #000000;
+  border-color: #dee3eb;
   text-align: center;
   opacity: 1;
   padding: 5px;
-  color: yellow;
+  color: #dee3eb;
 }
 
 .footerDiv{

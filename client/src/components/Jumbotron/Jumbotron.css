@@ -1,12 +1,19 @@
 .jumbotron {
-    background-image:  url("../../img/markus-spiske-148030-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: auto;
-    height: 350px;
+    background-image:  url("../../img/testbgfio.jpg");
+    background-repeat: no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    min-height: 300px;
+    /* width: auto; */
+    /* height: 350px; */
+    -webkit-fill-available: 100% 100%;
     background-blend-mode: hard-light;
     background-color: #00000038;
-    margin-top: 8%;
+    /* margin-top: 8%; */
+    /* background-position:  */
 }
 
 .img-fluid {

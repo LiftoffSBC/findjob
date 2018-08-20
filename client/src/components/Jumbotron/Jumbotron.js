@@ -3,11 +3,11 @@ import "./Jumbotron.css";
 
 const Jumbotron = () => (
   <div className="jumbotron">
-    <h1><img src={require('../../img/finjobiotransparent.png')} className="img-fluid" alt="Responsive"/></h1>
+    {/* <h1><img src={require('../../img/finjobiotransparent.png')} className="img-fluid" alt="Responsive"/></h1> */}
     
-    <p>
+    {/* <p>
       Your one stop shop to find the job of your dreams.
-    </p>
+    </p> */}
   </div>
 );
 

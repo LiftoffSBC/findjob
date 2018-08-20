@@ -1,11 +1,11 @@
 .navbarTop {
-    background-color: #fffb16;
-    color: black;
+    background-color: #dee3eb;
+    color: #dee3eb;
     position: sticky;
     padding: 5px;
-    border-color: #b8b511;
+    border-color: #dee3eb;
     border-radius: 0px;
-    position:fixed;
+    /* position:fixed; */
     top: 0;
     min-width: 100%;
 }
@@ -33,4 +33,5 @@ button {
 
 img {
     height: 35px;
+    align-content: center;
 }
