@@ -2,8 +2,11 @@ import React from "react";
 // import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
+//We will import the navigation when it is complete:
+// import Navigation from "./components/Navigation/Navigation";
 import Table from "./components/Table/Table";
 import Footer from "./components/Footer/Footer";
+
 
 class App extends React.Component {
 
