@@ -42,6 +42,7 @@ class Navbar extends React.Component {
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
       // onClick={this.handleSavedJobs} - or function to go to a signed in users job page. 
+      
       //we also need to create hide/show functions for this based on if signed in.
       >My Jobs</button>
 

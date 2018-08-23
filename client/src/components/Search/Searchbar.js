@@ -1,8 +1,8 @@
 import React from "react";
-import "./Search.css";
+import "./Searchbar.css";
 import API from "./../../utils/API";
 
-class Search extends React.Component {
+class Searchbar extends React.Component {
 
     state = {
       jobs: [],
@@ -65,4 +65,4 @@ class Search extends React.Component {
     }
 }
 
-    export default Search;
+    export default Searchbar;
