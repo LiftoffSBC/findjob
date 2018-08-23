@@ -2,6 +2,7 @@ import React from "react";
 // import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
+import Search from "./components/Search/Search";
 //We will import the navigation when it is complete:
 // import Navigation from "./components/Navigation/Navigation";
 import Table from "./components/Table/Table";
@@ -23,9 +24,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar updateSearchResults={this.updateSearchResults}/>
-        <div className="container">
+      <div>
+        <Navbar />
           <Jumbotron />
+          </div>
+        <Search updateSearchResults={this.updateSearchResults}/>
+        <div className="container">
           <Table searchResults={this.state.searchResults}/>
         </div>
         <Footer />
