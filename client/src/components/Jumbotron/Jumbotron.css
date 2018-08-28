@@ -14,6 +14,12 @@
     background-color: #00000038;
     /* margin-top: 8%; */
     /* background-position:  */
+    padding: 20px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .img-fluid {

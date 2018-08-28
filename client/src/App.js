@@ -23,17 +23,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+ 
+      <div className="pageContainer">
       <div>
         <Navbar />
           <Jumbotron />
           </div>
         <Searchbar updateSearchResults={this.updateSearchResults}/>
         <div className="container">
+        {/* <Navigation /> */}
           <Table searchResults={this.state.searchResults}/>
         </div>
         <Footer />
       </div>
+   
 
     )}
 
