@@ -3,9 +3,11 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const request = require("request");
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
-var controller = require("./controller");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const session = require("express-session");
+const mongoose = require("mongoose");
+const controller = require("./controller");
 // require('dotenv').config();
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -15,6 +17,17 @@ mongoose.Promise = Promise;
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+require("./Routes/Authroutes.js")(app);
+
+app.use(session({
+  secret: 'r6DWIfP3ZidDCrQVCSMJsuh9u2mKPb7F',
+  resave: false,
+  saveUninitialized: true
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.get("/api/search/:title", (req, res) => {
   console.log(req.params.title)
@@ -44,14 +57,14 @@ app.get("/api/search/:title", (req, res) => {
 
 
 // Database configuration with mongoose
-var databaseUri = "mongodb://localhost/jobdb";
+// var databaseUri = "mongodb://localhost/jobdb";
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(databaseUri);
-}
-
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect(databaseUri);
+// }
+mongoose.connect("mongodb://localhost:27017/jobdb",{useNewUrlParser:true})
 var db = mongoose.connection;
 
 db.on("error", function (error) {
