@@ -7,7 +7,7 @@ const Table = (props) => {
   console.log(props);
   return (
     <div>
-    <h1>Results</h1>
+    
     <table className="table">
       <thead id="thead">
         <tr>
