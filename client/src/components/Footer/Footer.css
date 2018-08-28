@@ -1,6 +1,5 @@
 .footerBottom {
   width:100%;
-  height:100px;
   background-color: #dee3eb;
   margin-top: 50px;
   margin-bottom: 0px;
@@ -13,4 +12,11 @@
 
 .footerDiv{
   margin-top: 10px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  align-content: center;
+  height: auto;
+  float: none;
 }
