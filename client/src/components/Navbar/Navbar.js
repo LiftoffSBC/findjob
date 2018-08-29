@@ -3,8 +3,12 @@ import "./Navbar.css";
 
 class Navbar extends React.Component {
 
+  redirectToTarget = () => {
+    this.context.router.history.push(`/login`)
+  }
   
- render() {
+  
+  render() {
     return (
 
 
@@ -25,14 +29,13 @@ class Navbar extends React.Component {
     
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul className="nav navbar-nav">
-      <div>
-      {this.renderRedirect()}
+  
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
-      onClick={this.renderRedirect()} 
+      // onClick={this.handleSignIn} - our user auth function for sign in
       >Sign In</button>
-      </div>
+
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
