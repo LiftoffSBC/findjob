@@ -26,6 +26,7 @@ const Table = (props) => {
               <td>{result.Location}</td>
               <td>{result.Company}</td>
               <td><a href={result.URL} target="_blank">Apply Now</a></td>
+              <td><button data-id={result.JvId}>Save</button></td>
             </tr>
           )
         })}
