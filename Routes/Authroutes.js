@@ -1,4 +1,5 @@
 const passport = require("passport");
+//console.log("******");
 module.exports = function(app){
 
      app.post('/login', passport.authenticate
@@ -6,6 +7,8 @@ module.exports = function(app){
       failureRedirect: '/login' }));
    
     app.get('/', function(req, res){
-        console.log(req.user)
+        console.log(req.body);
     })
+
+    
 }

@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const request = require("request");
 const bodyParser = require("body-parser");
-const passport = require("passport");
+const passport = require("./client/Modules/Passport.js");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const controller = require("./controller");
@@ -18,8 +18,6 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-require("./Routes/Authroutes.js")(app);
-
 app.use(session({
   secret: 'r6DWIfP3ZidDCrQVCSMJsuh9u2mKPb7F',
   resave: false,
@@ -28,6 +26,10 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+
+require("./Routes/Authroutes.js")(app);
+require("./Routes/APIroutes.js")(app);
 
 app.get("/api/search/:title", (req, res) => {
   console.log(req.params.title)
@@ -47,7 +49,7 @@ app.get("/api/search/:title", (req, res) => {
         controller.create(job.JobTitle, job.Company, job.URL, job.AccquisitionDate, job.JvId);
       });
       
-      // console.log(JSON.parse(body));
+       console.log(JSON.parse(body));
       res.json(JSON.parse(body));
     } else {
       res.json({ error: err.message });

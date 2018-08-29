@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create Job schema
-var Userschema = new Schema({
+const Userschema = new Schema({
   // title is a required string
   email: {
     type: String,
@@ -14,11 +14,19 @@ var Userschema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  savedJobs: [{
+    type: Schema.Types.ObjectId,
+    ref: "Jobs"
+  }]
 });
 
+Userschema.methods.validPassword=function(pass){
+    return (this.password === pass);
+}
+
 // Create the Job model with the JobSchema
-var User = mongoose.model("User", Userschema);
+const User = mongoose.model("User", Userschema);
 
 // Export the model
 module.exports = User;
