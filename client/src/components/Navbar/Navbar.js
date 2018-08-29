@@ -1,13 +1,21 @@
 import React from "react";
 import "./Navbar.css";
+import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 class Navbar extends React.Component {
 
-
-  render() {
+state = {
+    redirect: false
+  }
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  
+ render() {
     return (
-
-
 <nav className="navbar navbar-default">
   <div className="container-fluid">
     <div className="navbar-header">
@@ -25,13 +33,17 @@ class Navbar extends React.Component {
     
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul className="nav navbar-nav">
-
+      redirectToTarget = () => {
+      this.context.router.history.push(`/login`)
+      }
+      <div>
+      {this.renderRedirect()}
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
-      // onClick={this.handleSignIn} - our user auth function for sign in
+      onClick={this.renderRedirect()} 
       >Sign In</button>
-
+      </div>
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
