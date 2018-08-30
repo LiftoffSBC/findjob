@@ -5,9 +5,22 @@ class Navbar extends React.Component {
 
   redirectToTarget = () => {
     this.context.router.history.push(`/login`)
-  }
+  };
   
-  
+
+
+ handleSignUp = event => {
+  window.location = '/register';
+
+};
+handleMyJobs = event => {
+  window.location = '/save';
+
+};
+handleSignIn = event => {
+  window.location = '/login';
+};
+
   render() {
     return (
 
@@ -33,21 +46,19 @@ class Navbar extends React.Component {
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
-      // onClick={this.handleSignIn} - our user auth function for sign in
+      onClick={this.handleSignIn}
       >Sign In</button>
 
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
-      // onClick={this.handleSignUp} - our functtion for sign ups
+      onClick={this.handleSignUp}
       >Sign Up</button>
 
       <button 
       type="button" 
       className="btn btn-black my-2 my-md-0 navbar-btn"
-      // onClick={this.handleSavedJobs} - or function to go to a signed in users job page. 
-      
-      //we also need to create hide/show functions for this based on if signed in.
+      onClick={this.handleMyJobs}
       >My Jobs</button>
 
           

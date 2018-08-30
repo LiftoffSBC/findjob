@@ -7,7 +7,7 @@ const Register = () => {
         <input id="txtEmail" name="email" type="email" placeholder="Email"></input>
         
         <input id="txtPassword" type="password" name="password" placeholder="Password"></input>
-        <input type="submit" value="submit" class="btn btn-primary submit"></input>
+        <input type="submit" value="submit" className="btn btn-black my-2 my-md-0 submit"></input>
         </form>
        
 
