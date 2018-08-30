@@ -1,9 +1,14 @@
+import passData from "../../utils.js";
 import React from "react";
 import "./Table.css";
 import "../Navbar/Navbar";
+import axios from "axios";
 // import "../../App";
 
+
+
 const Table = (props) => {
+  
   console.log(props);
   return (
     <div>
@@ -26,7 +31,9 @@ const Table = (props) => {
               <td>{result.Location}</td>
               <td>{result.Company}</td>
               <td><a href={result.URL} target="_blank">Apply Now</a></td>
-              <td><button data-id={result.JvId}>Save</button></td>
+              {/* <td><button data-id={result.JvId} onClick={()=>axios.post("/save", {params: {id: result.JvId}})}>Save</button></td> */}
+              <td><button data-id={result.JvId} onClick={()=>passData(result.JvId)}>Save</button></td>
+
             </tr>
           )
         })}

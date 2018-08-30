@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Signin from "./pages/Signin";
 import Register from "./pages/Register";
+// import savedJobs from "./components/Table/savedJobsTable.js";
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/login" component={Signin} />
-
+        {/* <Route exact path="/savedJobs" component={savedJobs} /> */}
       </Switch>
     </Router>
 
