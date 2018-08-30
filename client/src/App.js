@@ -1,12 +1,12 @@
 import React from "react";
 // import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Jumbotron from "./components/Jumbotron/Jumbotron";
-import Searchbar from "./components/Search/Searchbar";
+// import Navbar from "./components/Navbar/Navbar";
+// import Jumbotron from "./components/Jumbotron/Jumbotron";
+// import Searchbar from "./components/Search/Searchbar";
 //We will import the navigation when it is complete:
 // import Navigation from "./components/Navigation/Navigation";
-import Table from "./components/Table/Table";
-import Footer from "./components/Footer/Footer";
+// import Table from "./components/Table/Table";
+// import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Signin from "./pages/Signin";
