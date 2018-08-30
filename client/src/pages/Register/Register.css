@@ -1,0 +1,21 @@
+input {
+    float: none;
+    margin-right: 20px;
+    margin-top: 20px;
+    min-width: 500px;
+    min-height: 50px;
+    color: black;
+    background-color: #b9c3d0a8;
+    border-color: black;
+
+}
+
+.btn {
+    background-color: #000000a3;
+    color: #b9c3d0;
+}
+
+span, input {
+    display:inline-block;
+    width: stretch;
+}

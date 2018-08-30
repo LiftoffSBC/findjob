@@ -5,16 +5,15 @@ class Navbar extends React.Component {
 
   redirectToTarget = () => {
     this.context.router.history.push(`/login`)
-  };
+  }
   
-
-
- handleSignUp = event => {
-  window.location = '/register';
-
-};
+ 
 handleMyJobs = event => {
   window.location = '/save';
+
+};
+handleSignUp = event => {
+  window.location = '/register';
 
 };
 handleSignIn = event => {
